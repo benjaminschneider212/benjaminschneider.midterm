@@ -30,7 +30,7 @@ setMethod("initialize", "Rasch",
           }
 ) 
 
-raschobj<-new("Rasch", name="Benjamin", a=c(1,2,3,4,5), y_i=c(0,1,0,1,0))
+blah<-new("Rasch", name="Benjamin", a=c(1,2,3,4,5), y_i=c(0,1,0,1,0))
 
 #basic example
 poisson.lik(4, c(4,4,4,4))

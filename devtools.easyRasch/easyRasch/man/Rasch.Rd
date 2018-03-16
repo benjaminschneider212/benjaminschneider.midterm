@@ -9,6 +9,13 @@
 \description{
 Object of class \code{Rasch} is an input in package \code{easyRasch}
 }
+\details{
+An object of the class `Poisson' has the following slots:
+\itemize{
+\item \code{name} The name of the test taker
+\item \code{a}  a vector of question item parameters
+\item \code{y_i} a vector of answered for the respondent y_j}
+}
 \author{
 Benjamin R. Schneider: \email{benjamin.schneider@wustl.edu}
 }

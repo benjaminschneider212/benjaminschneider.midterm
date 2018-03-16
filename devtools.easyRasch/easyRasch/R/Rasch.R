@@ -7,7 +7,7 @@
 #' \itemize{
 #' \item \code{name} The name of the test taker
 #' \item \code{a}  a vector of question item parameters
-#' \item \code{y_i} a vector of answered for the respondent y_j
+#' \item \code{y_i} a vector of answered for the respondent y_j}
 #'
 #' @author Benjamin R. Schneider: \email{benjamin.schneider@@wustl.edu}
 #' @aliases Rasch-class initialize, Rasch-method 
