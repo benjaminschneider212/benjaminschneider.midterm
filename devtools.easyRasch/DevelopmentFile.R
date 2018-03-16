@@ -94,7 +94,7 @@ setMethod(f="prior",
 
 #code for eap
 setGeneric(name="eap",
-           def=function(raschObj, lower, upper)
+           def=function(raschObj, lower = -6, upper = 6)
            {standardGeneric("eap")}
 )
 
