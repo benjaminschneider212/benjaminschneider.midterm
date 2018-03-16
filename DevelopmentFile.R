@@ -2,7 +2,7 @@ library(devtools)
 library(roxygen2)
 
 #reload
-setwd("/Users/benjaminschneider/Documents/GitHub/benjaminschneider.midterm/")
+setwd("/Users/benjaminschneider/Documents/GitHub/benjaminschneider.midterm")
 current.code<-as.package("easyRasch")
 load_all(current.code)
 document(current.code)
