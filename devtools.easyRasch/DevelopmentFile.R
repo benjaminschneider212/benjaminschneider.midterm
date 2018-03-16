@@ -135,6 +135,8 @@ setMethod(f="print",
 
 #basic examples of functionality:
 
+#links to all of the help files for easy viewing
+?Rasch
 ?probability
 ?likelihood
 ?prior

@@ -10,6 +10,7 @@
 #' \item \code{y_i} a vector of answered for the respondent y_j}
 #'
 #' @author Benjamin R. Schneider: \email{benjamin.schneider@@wustl.edu}
+#' @note \code{a} and \code{y_i} must be of the same length
 #' @aliases Rasch-class initialize, Rasch-method 
 #' @rdname Rasch
 #' @export

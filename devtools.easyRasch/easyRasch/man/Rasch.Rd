@@ -16,6 +16,9 @@ An object of the class `Rasch' has the following slots:
 \item \code{a}  a vector of question item parameters
 \item \code{y_i} a vector of answered for the respondent y_j}
 }
+\note{
+\code{a} and \code{y_i} must be of the same length
+}
 \author{
 Benjamin R. Schneider: \email{benjamin.schneider@wustl.edu}
 }
