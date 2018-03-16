@@ -1,10 +1,17 @@
-Package: anRpackage
+Package: easyRasch
 Type: Package
-Title: What the package does (short line)
+Title: This package utilizing the functionality of the Rasch equation to do various estimates on an exam taker
 Version: 1.0
 Date: 2018-03-16
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Benjamin R. Schneider
+Maintainer: Benjamin R. Schneider <benjamin.schneider@wustl.edu>
+Description: This package contains methods to find the probability, likelihood, and expected a posteriori values for the given provided values. This utilizes S4 functionality to do so.
+License: GPL(>=2)
+collate:
+  'Rasch.R'
+  'probability.R'
+  'likelihood.R'
+  'prior.R'
+  'eap.R'
+  'print.R'
 RoxygenNote: 6.0.1
