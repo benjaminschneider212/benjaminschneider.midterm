@@ -141,12 +141,27 @@ setMethod(f="print",
 ?eap
 ?print
 
-raschObj<-new("Rasch", name="Benjamin", a=c(1,2,3,4,5,6), y_i=c(0,1,0,1,0))
-raschobject<-new("Rasch", name="Benjamin", a=c(1,2,3,4,5), y_i=c(0,1,0,1,0))
+raschObj<-new("Rasch", name="Benjamin", a=c(1,2,3,4,5,6), y_i=c(0,1,0,1,0)) #this will throw an error becuase a and y_i are not even
+
+raschobject<-new("Rasch", name="Benjamin", a=c(1,2,3,4,5), y_i=c(0,1,0,1,0))#here we can see that is is correct
+raschobject1<-new("Rasch", name="Jacob", a=c(3.5, 8.0, 31, 2, .7, 4), y_i=c(1,1,0,0,0,1))#alt object
+
 theta<-2
-probability(raschobject, theta)
-likelihood(raschobject, theta)
-prior(theta)
-eap(raschobject)
+probability(raschobject, theta) #probability functionality, we can check that our values make sense
+probability(raschobject1, 7)
+
+likelihood(raschobject, theta) #likelihood functionality
+likelihood(raschobject, .56)
+
+prior(theta) #prior functionality
+prior(7.67)
+
+eap(raschobject) #eap functionality
 eap(raschobject, 0,5)
+eap(raschobject1, -2,4)
+eap(raschobject1, 0,5)
+
+print(raschobject) #print functionality
 print(raschobject, 0,5)
+print(raschobject1, -2,4)
+print(raschobject1, 0,5)
