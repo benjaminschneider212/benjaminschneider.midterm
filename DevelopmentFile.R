@@ -2,8 +2,8 @@ library(devtools)
 library(roxygen2)
 
 #reload
-setwd("/Users/benjaminschneider/Desktop/poisson.lik/")
-current.code<-as.package("PoissonLikelihood")
+setwd("/Users/benjaminschneider/Documents/GitHub/benjaminschneider.midterm/")
+current.code<-as.package("easyRasch")
 load_all(current.code)
 document(current.code)
 
@@ -29,7 +29,6 @@ setMethod("initialize", "Rasch",
             return(value)
           }
 ) 
-/Users/benjaminschneider/anRpackage/data
 
 raschobj<-new("Rasch", name="Benjamin", a=c(1,2,3,4,5), y_i=c(0,1,0,1,0))
 
