@@ -17,7 +17,7 @@
 #' lower<-0
 #' eap(raschobject, lower, upper)
 #' 
-#' @seealso Rasch, likelihood, probability , prio
+#' @seealso Rasch, likelihood, probability , prior
 #' @rdname eap
 #' @aliases eap, ANY-method
 #' @export

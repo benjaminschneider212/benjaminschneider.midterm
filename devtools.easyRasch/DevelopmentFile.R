@@ -126,9 +126,6 @@ setMethod(f="print",
 
 #basic examples of functionality:
 
-numerator$value/denominator$value
-
-
 ?probability
 ?likelihood
 ?prior

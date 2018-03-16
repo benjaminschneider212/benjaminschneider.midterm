@@ -2,11 +2,13 @@
 
 export(eap)
 export(likelihood)
+export(print)
 export(prior)
 export(probability)
 exportClasses(Rasch)
 exportMethods(eap)
 exportMethods(initialize)
 exportMethods(likelihood)
+exportMethods(print)
 exportMethods(prior)
 exportMethods(probability)
