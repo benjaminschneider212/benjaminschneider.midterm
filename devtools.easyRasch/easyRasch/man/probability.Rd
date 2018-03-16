@@ -29,7 +29,7 @@ probability(raschobject, 2)
 
 }
 \seealso{
-Rasch,
+Rasch, likelihood, prior
 }
 \author{
 Benjamin Schneider

@@ -14,7 +14,7 @@
 #' raschobject<-new("Rasch", name="Benjamin", a=c(1,2,3,4,5), y_i=c(0,1,0,1,0))
 #' likelihood(raschobject, 2)
 #' 
-#' @seealso Rasch, 
+#' @seealso Rasch, probability, prior
 #' @rdname likelihood
 #' @aliases likelihood, ANY-method
 #' @export

@@ -82,6 +82,20 @@ setMethod(f="likelihood",
             return(xi)
 })
 
+#code for prior function:
+
+setGeneric(name="prior",
+           def=function(theta)
+           {standardGeneric("prior")}
+)
+
+setMethod(f="prior",
+          definition=function(theta){
+            output<-dnorm(theta, mean=0, sd=3)
+            return(output)
+          })
+
+
 
 #basic examples of functionality:
 
@@ -90,3 +104,4 @@ raschobject<-new("Rasch", name="Benjamin", a=c(1,2,3,4,5), y_i=c(0,1,0,1,0))
 theta<-2
 probability(raschobject, theta)
 likelihood(raschobject, theta)
+prior(theta)
