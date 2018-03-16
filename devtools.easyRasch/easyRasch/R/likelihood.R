@@ -24,15 +24,14 @@ setGeneric(name="likelihood",
 )
 #' @export
 setMethod(f="likelihood",
-          definition=function(raschObj, theta){
-            ourworkingoutputs<-probability(raschObj,theta)
-            P_ij<-ourworkingoutputs$P_ij
-            PQ_ij<-ourworkingoutputs$PQ_ij
-            xi<-1
-            for(i in 1:length(P_ij)){
-              x<-P_ij[i]*PQ_ij[i]
-              xi<-xi*x
+          definition=function(raschObj, theta){ 
+            ourworkingoutputs<-probability(raschObj,theta) 
+            PQ_ij<-ourworkingoutputs$PQ_ij 
+            xi<-1 
+            for(i in 1:length(PQ_ij)){
+              x<-PQ_ij[i] 
+              xi<-xi*x 
             }
             return(xi)
-          })            
+          })          
             

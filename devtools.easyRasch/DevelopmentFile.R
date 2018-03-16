@@ -71,16 +71,17 @@ setGeneric(name="likelihood", #doing this again
 
 setMethod(f="likelihood",
           definition=function(raschObj, theta){ #mirroring the above for the purpose of the creation of our function
-            ourworkingoutputs<-probability(raschObj,theta)
-            P_ij<-ourworkingoutputs$P_ij
-            PQ_ij<-ourworkingoutputs$PQ_ij
-            xi<-1
-            for(i in 1:length(P_ij)){
-              x<-P_ij[i]*PQ_ij[i]
-              xi<-xi*x
+            ourworkingoutputs<-probability(raschObj,theta) #so here i call in the probability function and save the output as a new object so I can subset it
+            PQ_ij<-ourworkingoutputs$PQ_ij #I extract the PQ_ij vector here
+            xi<-1 #I create this value so that I can start the fo loop below with something I multiply onto and this will not effect the value (similar to creating the null vector above)
+            for(i in 1:length(PQ_ij)){#so now I call the for loop and I do it for the length of the two vectors
+              x<-PQ_ij[i] # I extract the element I am working with in the loop
+              xi<-xi*x #i multiply it to the previous in order to create the output
             }
-            return(xi)
+            return(xi) #return the output of the likelihood function
 })
+
+product(c(1,2,3))
 
 #code for prior function:
 
