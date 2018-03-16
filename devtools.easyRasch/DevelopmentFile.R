@@ -92,7 +92,7 @@ setMethod(f="prior",
             return(output)
           })
 
-#code for eap
+#code for EAP function
 setGeneric(name="eap",
            def=function(raschObj, lower = -6, upper = 6)
            {standardGeneric("eap")}
@@ -107,6 +107,20 @@ setMethod(f="eap",
             denominator<-integrate(integrand1, x, y)
             numerator<-integrate(integrand2, x, y)
             output<-numerator$value/denominator$value
+            return(output)
+          })
+
+#code for the print function
+setGeneric(name="print",
+           def=function(raschObj, lower = -6, upper = 6)
+           {standardGeneric("print")}
+)
+
+setMethod(f="print",
+          definition=function(raschObj, lower = -6, upper = 6){
+            eapoutput<-eap(raschObj, lower, upper)
+            output<-list(raschObj@name, eapoutput)
+            names(output)<-c("Name of test taker", "expected a posteriori value")
             return(output)
           })
 
@@ -125,3 +139,4 @@ probability(raschobject, theta)
 likelihood(raschobject, theta)
 prior(theta)
 eap(raschobject)
+print(raschobject)
