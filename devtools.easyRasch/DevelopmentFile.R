@@ -7,9 +7,6 @@ current.code<-as.package("easyRasch")
 load_all(current.code)
 document(current.code)
 
-###PRO TIP
-package.skeleton()
-
 #code for class structure:
 setClass(Class="Rasch",
          representation = representation(
@@ -95,16 +92,36 @@ setMethod(f="prior",
             return(output)
           })
 
+#code for eap
+setGeneric(name="eap",
+           def=function(raschObj, lower, upper)
+           {standardGeneric("eap")}
+)
 
+setMethod(f="eap",
+          definition=function(raschObj, lower = -6, upper = 6){
+            x<-lower
+            y<-upper
+            integrand1 <- function(theta) {likelihood(raschObj, theta)*prior(theta)}
+            integrand2 <- function(theta) {theta*likelihood(raschObj, theta)*prior(theta)}
+            denominator<-integrate(integrand1, x, y)
+            numerator<-integrate(integrand2, x, y)
+            output<-numerator$value/denominator$value
+            return(output)
+          })
 
 #basic examples of functionality:
+
+numerator$value/denominator$value
+
 
 ?probability
 ?likelihood
 ?prior
-
+raschObj<-new("Rasch", name="Benjamin", a=c(1,2,3,4,5), y_i=c(0,1,0,1,0))
 raschobject<-new("Rasch", name="Benjamin", a=c(1,2,3,4,5), y_i=c(0,1,0,1,0))
 theta<-2
 probability(raschobject, theta)
 likelihood(raschobject, theta)
 prior(theta)
+eap(raschobject)
