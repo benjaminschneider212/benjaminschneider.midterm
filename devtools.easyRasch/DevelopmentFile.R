@@ -99,6 +99,9 @@ setMethod(f="prior",
 
 #basic examples of functionality:
 
+?probability
+?likelihood
+?prior
 
 raschobject<-new("Rasch", name="Benjamin", a=c(1,2,3,4,5), y_i=c(0,1,0,1,0))
 theta<-2
