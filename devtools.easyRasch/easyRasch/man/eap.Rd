@@ -22,7 +22,7 @@ the expected a posteriori value
 Finds the value of the expected a posteriori given an input object of class \code{Rasch} and a lower and upper bound.
 }
 \note{
-This is a very simple function
+This function provides a value that will be also output in the print function.
 }
 \examples{
 
@@ -33,7 +33,7 @@ eap(raschobject, lower, upper)
 
 }
 \seealso{
-Rasch, likelihood, probability , prior
+\code{\link{Rasch}}, \code{\link{likelihood}}, \code{\link{prior}}, \code{\link{probability}}, \code{\link{print}}
 }
 \author{
 Benjamin Schneider

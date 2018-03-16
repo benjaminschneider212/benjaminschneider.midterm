@@ -9,7 +9,7 @@
 #' @return the name of the student and the expected a posteriori value
 #'
 #' @author Benjamin Schneider
-#' @note This is a very simple function
+#' @note This function is a slight upgrade of the \code{eap} function in that it also provides the name of the student.
 #' @examples
 #' 
 #' raschobject<-new("Rasch", name="Benjamin", a=c(1,2,3,4,5), y_i=c(0,1,0,1,0))
@@ -17,7 +17,7 @@
 #' lower<-0
 #' print(raschobject, lower, upper)
 #' 
-#' @seealso Rasch, likelihood, probability , prior,
+#' @seealso \code{\link{Rasch}}, \code{\link{likelihood}}, \code{\link{prior}}, \code{\link{eap}}, \code{\link{probability}}
 #' @rdname print
 #' @aliases print, ANY-method
 #' @export

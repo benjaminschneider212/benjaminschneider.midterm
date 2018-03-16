@@ -22,7 +22,7 @@ the name of the student and the expected a posteriori value
 Lists the name of the student taking the test and finds the value of the expected a posteriori given an input object of class \code{Rasch} and a lower and upper bound.
 }
 \note{
-This is a very simple function
+This function is a slight upgrade of the \code{eap} function in that it also provides the name of the student.
 }
 \examples{
 
@@ -33,7 +33,7 @@ print(raschobject, lower, upper)
 
 }
 \seealso{
-Rasch, likelihood, probability , prior,
+\code{\link{Rasch}}, \code{\link{likelihood}}, \code{\link{prior}}, \code{\link{eap}}, \code{\link{probability}}
 }
 \author{
 Benjamin Schneider

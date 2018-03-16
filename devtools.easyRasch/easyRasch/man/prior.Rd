@@ -15,10 +15,10 @@ prior(theta)
 The height of a specified normal curve evaluated at theta when mean=0 and standard deviation=3
 }
 \description{
-Finds the height of a specified normal curve evaluated at theta
+Finds the height of a specified normal curve evaluated at a given theta.
 }
 \note{
-This is a very simple function
+This output is used in the \code{eap} function
 }
 \examples{
 
@@ -27,7 +27,7 @@ prior(theta)
 
 }
 \seealso{
-Rasch, likelihood, probability
+\code{\link{Rasch}}, \code{\link{likelihood}}, \code{\link{probability}}, \code{\link{eap}}, \code{\link{print}}
 }
 \author{
 Benjamin Schneider

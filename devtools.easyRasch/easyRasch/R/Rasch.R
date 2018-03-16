@@ -1,9 +1,9 @@
 #' Rasch Object 
 #' 
-#' Object of class \code{Rasch} is an input in package \code{easyRasch}
+#' Object of class \code{Rasch} is an input in multiple functions in the \code{easyRasch} package
 #'
 #' 
-#' An object of the class `Poisson' has the following slots:
+#' An object of the class `Rasch' has the following slots:
 #' \itemize{
 #' \item \code{name} The name of the test taker
 #' \item \code{a}  a vector of question item parameters

@@ -9,7 +9,7 @@
 likelihood(raschObj, theta)
 }
 \arguments{
-\item{raschObj}{A n object of class \code{Rasch}}
+\item{raschObj}{An object of class \code{Rasch}}
 
 \item{theta}{a proposed value of the theta paramter of the probability equation}
 }
@@ -17,10 +17,10 @@ likelihood(raschObj, theta)
 The output of the likelihood function
 }
 \description{
-Finds the likelihood function of a proposed value of theta
+Finds the likelihood function for a proposed value of theta and a given object of class \code{Rasch}.
 }
 \note{
-This is a very simple function
+This function produces values for use in the \code{eap} function
 }
 \examples{
 
@@ -29,7 +29,7 @@ likelihood(raschobject, 2)
 
 }
 \seealso{
-Rasch, probability, prior
+\code{\link{Rasch}}, \code{\link{probability}}, \code{\link{prior}}, \code{\link{eap}}, \code{\link{print}}
 }
 \author{
 Benjamin Schneider

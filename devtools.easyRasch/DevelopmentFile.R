@@ -129,6 +129,9 @@ setMethod(f="print",
 ?probability
 ?likelihood
 ?prior
+?eap
+?print
+
 raschObj<-new("Rasch", name="Benjamin", a=c(1,2,3,4,5), y_i=c(0,1,0,1,0))
 raschobject<-new("Rasch", name="Benjamin", a=c(1,2,3,4,5), y_i=c(0,1,0,1,0))
 theta<-2

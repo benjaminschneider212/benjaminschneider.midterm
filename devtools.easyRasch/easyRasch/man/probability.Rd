@@ -9,18 +9,18 @@
 probability(raschObj, theta)
 }
 \arguments{
-\item{raschObj}{A n object of class \code{Rasch}}
+\item{raschObj}{An object of class \code{Rasch}}
 
 \item{theta}{a proposed value of the theta paramter of the probability equation}
 }
 \value{
-A vector of length n for P_ij for each equation and a specialized vector containing P_ij and Q_ij values depending on correct or incorrect answers
+A vector of length n for \code{P_ij} for each equation and a specialized vector \code{PQ_ij} containing P_ij and Q_ij values depending on correct or incorrect answers.
 }
 \description{
-Finds the probability of a student getting certain exam questions correctly given a parameter
+Finds the probability of a student getting certain exam questions correctly given a parameter theta.
 }
 \note{
-This is a very simple function
+This function produces vectors for use in finding the likelihood function.
 }
 \examples{
 
@@ -29,7 +29,7 @@ probability(raschobject, 2)
 
 }
 \seealso{
-Rasch, likelihood, prior
+\code{\link{Rasch}}, \code{\link{likelihood}}, \code{\link{prior}}, \code{\link{eap}}, \code{\link{print}}
 }
 \author{
 Benjamin Schneider

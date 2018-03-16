@@ -1,20 +1,20 @@
 #' Probability of Rasch 
 #'
-#' Finds the probability of a student getting certain exam questions correctly given a parameter
+#' Finds the probability of a student getting certain exam questions correctly given a parameter theta.
 #'
-#' @param raschObj A n object of class \code{Rasch}
+#' @param raschObj An object of class \code{Rasch}
 #' @param theta a proposed value of the theta paramter of the probability equation
 #'
-#' @return A vector of length n for P_ij for each equation and a specialized vector containing P_ij and Q_ij values depending on correct or incorrect answers
+#' @return A vector of length n for \code{P_ij} for each equation and a specialized vector \code{PQ_ij} containing P_ij and Q_ij values depending on correct or incorrect answers.
 #'
 #' @author Benjamin Schneider
-#' @note This is a very simple function
+#' @note This function produces vectors for use in finding the likelihood function.
 #' @examples
 #' 
 #' raschobject<-new("Rasch", name="Benjamin", a=c(1,2,3,4,5), y_i=c(0,1,0,1,0))
 #' probability(raschobject, 2)
 #' 
-#' @seealso Rasch, likelihood, prior
+#' @seealso \code{\link{Rasch}}, \code{\link{likelihood}}, \code{\link{prior}}, \code{\link{eap}}, \code{\link{print}}
 #' @rdname probability
 #' @aliases probability, ANY-method
 #' @export
