@@ -81,51 +81,47 @@ setMethod(f="likelihood",
             return(xi) #return the output of the likelihood function
 })
 
-product(c(1,2,3))
-
 #code for prior function:
 
-setGeneric(name="prior",
-           def=function(theta)
+setGeneric(name="prior", #same thing as always
+           def=function(theta) #only have one argument
            {standardGeneric("prior")}
 )
 
 setMethod(f="prior",
-          definition=function(theta){
-            output<-dnorm(theta, mean=0, sd=3)
-            return(output)
+          definition=function(theta){ #taking in the argument again
+            output<-dnorm(theta, mean=0, sd=3) #this is super easy and all it involved was calling in the theta and properly doing the dnorm function with the requested values.
+            return(output) #easy as that!
           })
 
 #code for EAP function
-setGeneric(name="eap",
-           def=function(raschObj, lower = -6, upper = 6)
+setGeneric(name="eap", #creating the generic
+           def=function(raschObj, lower = -6, upper = 6) #doing our arguments with the defaults
            {standardGeneric("eap")}
 )
 
 setMethod(f="eap",
-          definition=function(raschObj, lower = -6, upper = 6){
-            x<-lower
-            y<-upper
-            integrand1 <- function(theta) {likelihood(raschObj, theta)*prior(theta)}
-            integrand2 <- function(theta) {theta*likelihood(raschObj, theta)*prior(theta)}
-            denominator<-integrate(integrand1, x, y)
-            numerator<-integrate(integrand2, x, y)
-            output<-numerator$value/denominator$value
-            return(output)
+          definition=function(raschObj, lower = -6, upper = 6){ #repeating the arguments and defaults again!
+            integrand.denominator <- function(theta) {likelihood(raschObj, theta)*prior(theta)} #creating the integrand of the denominator, in terms of theta
+            integrand.numerator <- function(theta) {theta*likelihood(raschObj, theta)*prior(theta)} #creating the integrand for the numerator, in terms of theta
+            denominator<-integrate(integrand.denominator, lower, upper) #doing the actual integral with created function
+            numerator<-integrate(integrand.numerator, lower, upper) #doing the actual integral with created function
+            output<-numerator$value/denominator$value #have to subset the value because the output is as a list
+            return(output) #the output of the eap function. If the lower and upper bounds are lower=-n and upper=n then the output will be 0
           })
 
 #code for the print function
-setGeneric(name="print",
-           def=function(raschObj, lower = -6, upper = 6)
+setGeneric(name="print", #last function
+           def=function(raschObj, lower = -6, upper = 6) #this is the same as the eap
            {standardGeneric("print")}
 )
 
 setMethod(f="print",
-          definition=function(raschObj, lower = -6, upper = 6){
-            eapoutput<-eap(raschObj, lower, upper)
-            output<-list(raschObj@name, eapoutput)
-            names(output)<-c("Name of test taker", "expected a posteriori value")
-            return(output)
+          definition=function(raschObj, lower = -6, upper = 6){ #same way of doing the defaults
+            eapoutput<-eap(raschObj, lower, upper) #here we call the eap function in
+            output<-list(raschObj@name, eapoutput) #we subset the name out of our rasch object to create a list
+            names(output)<-c("Name of test taker", "expected a posteriori value") #names for ease of interpretation
+            return(output) #our output is good to go!
           })
 
 #basic examples of functionality:
@@ -143,4 +139,5 @@ probability(raschobject, theta)
 likelihood(raschobject, theta)
 prior(theta)
 eap(raschobject)
-print(raschobject)
+eap(raschobject, 0,5)
+print(raschobject, 0,5)
