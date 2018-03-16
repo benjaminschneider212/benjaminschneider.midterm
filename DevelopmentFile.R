@@ -10,29 +10,28 @@ document(current.code)
 ###PRO TIP
 package.skeleton()
 
-setClass(Class="AllSquares",
+setClass(Class="Rasch",
          representation = representation(
-           addSquare = "numeric",
-           subtractSquare = "numeric",
-           x = "numeric",
-           y = "numeric",
-           square= "character"
+           name = "character",
+           a = "numeric",
+           y_i = "numeric"
          ),
          prototype = prototype(
-           addSquare = numeric(),
-           subtractSquare=numeric(),
-           x = numeric(),
-           y = numeric(),
-           square=character()
+           name = character(),
+           a=numeric(),
+           y_i = numeric()
          )
 )
 
-setMethod("initialize", "AllSquares", 
+setMethod("initialize", "Rasch", 
           function(.Object, ...){
             value=callNextMethod()
             return(value)
           }
 ) 
+/Users/benjaminschneider/anRpackage/data
+
+raschobj<-new("Rasch", name="Benjamin", a=c(1,2,3,4,5), y_i=c(0,1,0,1,0))
 
 #basic example
 poisson.lik(4, c(4,4,4,4))
