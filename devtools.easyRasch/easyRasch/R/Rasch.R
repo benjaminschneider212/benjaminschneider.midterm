@@ -32,3 +32,11 @@ setMethod("initialize", "Rasch",
             return(value)
           }
 ) 
+#' @export
+Rasch.test <- function(raschObj) {
+  if(length(raschObj@a) == length(raschObj@y_i)) TRUE 
+  else paste("Unequal a and y_i lengths: ", length(raschObj@a), ", ",
+             length(raschObj@y_i), sep="") 
+}
+#' @export
+setValidity("Rasch", Rasch.test)

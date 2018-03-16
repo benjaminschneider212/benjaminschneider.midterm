@@ -31,6 +31,15 @@ setMethod("initialize", "Rasch", #this sets up our initialize method so that we 
           }
 ) 
 
+#Validity test, So the biggest possible error I think that would be run into is if the two vectors are not of the same length, this fixes that problem
+Rasch.test <- function(raschObj) {
+  if(length(raschObj@a) == length(raschObj@y_i)) TRUE #this just checks if both are of the same length
+  else paste("Unequal a and y_i lengths: ", length(raschObj@a), ", ",
+             length(raschObj@y_i), sep="") #if not than it prints this and shows the length of the two vectors as they currently are, I got this from off line and modified it.
+}
+
+setValidity("Rasch", Rasch.test) #this sets us up so we know we are creating valid Rasch objects each time. We know that the character name won't get messed up so we are good!
+
 #code for Probability function:
 setGeneric(name="probability", #setting up our generic for the probability function
            def=function(raschObj, theta) #we have two arguments that can be taken in in this case.
@@ -132,7 +141,7 @@ setMethod(f="print",
 ?eap
 ?print
 
-raschObj<-new("Rasch", name="Benjamin", a=c(1,2,3,4,5), y_i=c(0,1,0,1,0))
+raschObj<-new("Rasch", name="Benjamin", a=c(1,2,3,4,5,6), y_i=c(0,1,0,1,0))
 raschobject<-new("Rasch", name="Benjamin", a=c(1,2,3,4,5), y_i=c(0,1,0,1,0))
 theta<-2
 probability(raschobject, theta)
